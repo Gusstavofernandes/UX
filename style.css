@@ -1,0 +1,335 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+
+    /* Fundo base */
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(183, 148, 244, 0.35),
+            transparent 60%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(123, 44, 191, 0.25),
+            transparent 55%
+        ),
+        linear-gradient(
+            135deg,
+            #f8f5fc,
+            #f1ebfa
+        );
+
+    background-attachment: fixed;
+    color: #2d1b47;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+
+.header {
+    text-align: center;
+    padding: 25px 20px;
+    background: linear-gradient(90deg, #5a189a, #7b2cbf, #9d4edd);
+    color: white;
+    box-shadow: 0 4px 20px rgba(90, 24, 154, 0.35);
+}
+
+.header h1 {
+    font-size: 26px;
+}
+
+.header p {
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+/* CONTAINER CENTRAL */
+.container {
+    min-height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* CONTROLE */
+.controle {
+    position: relative;
+    width: 280px;
+}
+
+/* IMAGEM (NÃO CAPTA CLIQUE) */
+.controle img {
+    width: 100%;
+    display: block;
+    pointer-events: none; /* ESSENCIAL */
+}
+
+/* BOTÕES INVISÍVEIS */
+/* BOTÕES INVISÍVEIS */
+.btn {
+    position: absolute;
+    border: none;
+    background: rgba(255, 0, 0, 0);
+    cursor: pointer;
+}
+
+
+/* === POSIÇÕES EM % === */
+
+/* Botões superiores */
+.rosa {
+    top: 10%;
+    left: 18%;
+    width: 18%;
+    height: 8%;
+    border-radius: 50%;
+}
+
+.roxo {
+    top: 10%;
+    left: 41%;
+    width: 18%;
+    height: 8%;
+    border-radius: 50%;
+}
+
+.azul {
+    top: 10%;
+    left: 64%;
+    width: 18%;
+    height: 8%;
+    border-radius: 50%;
+}
+
+/* OK */
+.ok {
+    top: 18%;
+    left: 30%;
+    width: 40%;
+    height: 18%;
+    border-radius: 50%;
+}
+
+/* Volume */
+.volmenos {
+    top: 41%;
+    left: 30%;
+    width: 14%;
+    height: 6%;
+    border-radius: 50%;
+}
+
+.mute {
+    top: 41%;
+    left: 43%;
+    width: 10%;
+    height: 6%;
+    border-radius: 50%;
+}
+
+.volmais {
+    top: 41%;
+    left: 55%;
+    width: 14%;
+    height: 6%;
+    border-radius: 50%;
+}
+
+/* Estrela */
+.estrela {
+    top: 50%;
+    left: 38%;
+    width: 24%;
+    height: 10%;
+    border-radius: 50%;
+}
+
+/* Power */
+.power {
+    top: 68%;
+    left: 35%;
+    width: 30%;
+    height: 14%;
+    border-radius: 50%;
+}
+
+/* DISPLAY */
+
+.display {
+    background: #ffffff;
+    color: #2d1b47;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+/* AGRUPA CONTROLE + DESCRIÇÃO */
+
+
+/* CAIXA DE TEXTO AO LADO */
+.descricao {
+    width: 260px;
+    min-height: 160px;
+    background: white;
+    color: #2d1b47;
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.descricao h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #5a189a;
+}
+
+.descricao p {
+    font-size: 14px;
+    line-height: 1.4;
+}
+/* ESTADO INICIAL (OCULTO) */
+.descricao {
+    width: 260px;
+    min-height: 160px;
+    background: white;
+    color: #2d1b47;
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+    opacity: 0;
+    transform: translateX(20px) scale(0.96);
+    transition: all 0.45s ease;
+    pointer-events: none;
+}
+
+/* ESTADO ATIVO (VISÍVEL) */
+.descricao.ativa {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    pointer-events: auto;
+}
+/* SETA */
+.seta {
+    font-size: 40px;
+    color: #7b2cbf;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.3s ease;
+}
+
+/* SETA VISÍVEL */
+.seta.ativa {
+    opacity: 1;
+    animation: apontar 1.2s infinite ease-in-out;
+}
+
+/* ANIMAÇÃO */
+@keyframes apontar {
+    0% {
+        transform: translateX(-10px);
+        opacity: 0.4;
+    }
+    50% {
+        transform: translateX(8px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-10px);
+        opacity: 0.4;
+    }
+}
+/* SVG DA LINHA */
+.linha-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.linha-svg line {
+    stroke: #7b2cbf;
+    stroke-width: 3;
+    stroke-dasharray: 6 6;
+    animation: linhaAnimada 1s linear infinite;
+}
+
+/* ANIMAÇÃO DO TRAÇO */
+@keyframes linhaAnimada {
+    to {
+        stroke-dashoffset: -12;
+    }
+}
+
+/* CAIXA DE DESCRIÇÃO (FLUTUANTE) */
+.descricao {
+    position: absolute;
+    width: 260px;
+    background: white;
+    color: #2d1b47;
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.35s ease;
+    z-index: 6;
+}
+
+.descricao.ativa {
+    opacity: 1;
+    transform: scale(1);
+}
+.descricao.esquerda {
+    transform-origin: right center;
+}
+
+.descricao.direita {
+    transform-origin: left center;
+}
+.descricao {
+    position: absolute;
+    display: flex;
+    gap: 16px;
+
+    background: white;
+    padding: 18px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.35s ease;
+}
+
+.descricao.ativa {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.texto {
+    width: 220px;
+    background: #f4edfb;
+    border-radius: 12px;
+    padding: 14px;
+    color: #2d1b47;
+}
+
+.texto-secundario {
+    background: #ede4f8;
+}
+
+/* 🔁 inverte os lados quando necessário */
+.descricao.invertida {
+    flex-direction: row-reverse;
+}

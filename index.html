@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Protótipo Controle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <h1>Protótipo de Controle Remoto</h1>
+    <p>Clique nos botões para ver a descrição</p>
+</header>
+
+<main class="container">
+
+    <div class="area-controle">
+
+        <div class="controle">
+            <img src="ChatGPT Image 9 de fev. de 2026, 18_41_12.png" alt="Controle remoto">
+
+            <!-- Botões -->
+            <button class="btn rosa"
+                onclick="mostrarInfo('Botão Rosa', 'Botão de atalho rápido configurável.')"></button>
+
+            <button class="btn roxo"
+                onclick="mostrarInfo('Botão Roxo', 'Botão de função especial do sistema.')"></button>
+
+            <button class="btn azul"
+                onclick="mostrarInfo('Botão Azul', 'Botão de navegação secundária.')"></button>
+
+            <button class="btn ok"
+                onclick="mostrarInfo('Botão OK', 'Confirma ações e seleções no sistema.')"></button>
+
+            <button class="btn volmenos"
+                onclick="mostrarInfo('Volume -', 'Diminui o volume do dispositivo.')"></button>
+
+            <button class="btn mute"
+                onclick="mostrarInfo('Mudo', 'Ativa ou desativa o som.')"></button>
+
+            <button class="btn volmais"
+                onclick="mostrarInfo('Volume +', 'Aumenta o volume do dispositivo.')"></button>
+
+            <button class="btn estrela"
+                onclick="mostrarInfo('Favoritos', 'Acessa conteúdos favoritos.')"></button>
+
+            <button class="btn power"
+                onclick="mostrarInfo('Power', 'Liga ou desliga o aparelho.')"></button>
+        </div>
+        <div class="seta" id="seta">➜</div>
+        <svg class="linha-svg" id="linhaSvg">
+            <line id="linha" x1="0" y1="0" x2="0" y2="0" />
+        </svg>
+        <!-- CAIXA DE DESCRIÇÃO -->
+        <div id="descricao" class="descricao"></div>
+    </div>
+
+    <!-- Display inferior -->
+    <div class="display" id="display">
+        Nenhum botão pressionado
+    </div>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
