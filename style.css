@@ -112,16 +112,16 @@ body {
 
 /* OK */
 .ok {
-    top: 18%;
-    left: 30%;
-    width: 40%;
+    top: 25%;
+    left: 37%;
+    width: 25%;
     height: 18%;
     border-radius: 50%;
 }
 
 /* Volume */
 .volmenos {
-    top: 41%;
+    top: 43%;
     left: 30%;
     width: 14%;
     height: 6%;
