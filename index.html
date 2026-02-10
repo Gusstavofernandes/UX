@@ -2,66 +2,53 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Protótipo Controle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UX Remote | Interatividade UVV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="header">
-    <h1>Protótipo de Controle Remoto</h1>
-    <p>Clique nos botões para ver a descrição</p>
-</header>
+    <main class="main-container">
+        <header class="header">
+            <h1 class="logo-text">UVV<span>.Remote</span></h1>
+            <p>Toque nos botões do controle para explorar as funções.</p>
+        </header>
 
-<main class="container">
+        <section class="content-wrapper">
+            <div class="remote-section">
+                <div class="remote-canvas">
+                    <img src="controle.png" alt="Controle Remoto Azul" class="remote-img">
+                    
+                    <div class="overlay-btn power" data-key="power"></div>
+                    <div class="overlay-btn num-1" data-key="btn1"></div>
+                    <div class="overlay-btn num-2" data-key="btn2"></div>
+                    <div class="overlay-btn num-3" data-key="btn3"></div>
+                    <div class="overlay-btn arrow-up" data-key="up"></div>
+                    <div class="overlay-btn arrow-down" data-key="down"></div>
+                    <div class="overlay-btn arrow-left" data-key="left"></div>
+                    <div class="overlay-btn arrow-right" data-key="right"></div>
+                    <div class="overlay-btn ok" data-key="ok"></div>
+                    <div class="overlay-btn vol-plus" data-key="volPlus"></div>
+                    <div class="overlay-btn vol-minus" data-key="volMinus"></div>
+                    <div class="overlay-btn ch-plus" data-key="chPlus"></div>
+                    <div class="overlay-btn ch-minus" data-key="chMinus"></div>
+                    <div class="overlay-btn star" data-key="star"></div>
+                </div>
+            </div>
 
-    <div class="area-controle">
+            <aside class="info-section">
+                <div id="info-card" class="info-card empty-state">
+                    <div id="info-content">
+                        <span class="icon-display">🎮</span>
+                        <h3>Interface Pronta</h3>
+                        <p>Aguardando interação. Clique em um botão para ver a descrição UX.</p>
+                    </div>
+                </div>
+            </aside>
+        </section>
+    </main>
 
-        <div class="controle">
-            <img src="controle.png" alt="Controle remoto">
-
-            <!-- Botões -->
-            <button class="btn rosa"
-                onclick="mostrarInfo('Botão Rosa', 'Botão de atalho rápido configurável.')"></button>
-
-            <button class="btn roxo"
-                onclick="mostrarInfo('Botão Roxo', 'Botão de função especial do sistema.')"></button>
-
-            <button class="btn azul"
-                onclick="mostrarInfo('Botão Azul', 'Botão de navegação secundária.')"></button>
-
-            <button class="btn ok"
-                onclick="mostrarInfo('Botão OK', 'Confirma ações e seleções no sistema.')"></button>
-
-            <button class="btn volmenos"
-                onclick="mostrarInfo('Volume -', 'Diminui o volume do dispositivo.')"></button>
-
-            <button class="btn mute"
-                onclick="mostrarInfo('Mudo', 'Ativa ou desativa o som.')"></button>
-
-            <button class="btn volmais"
-                onclick="mostrarInfo('Volume +', 'Aumenta o volume do dispositivo.')"></button>
-
-            <button class="btn estrela"
-                onclick="mostrarInfo('Favoritos', 'Acessa conteúdos favoritos.')"></button>
-
-            <button class="btn power"
-                onclick="mostrarInfo('Power', 'Liga ou desliga o aparelho.')"></button>
-        </div>
-        <div class="seta" id="seta">➜</div>
-        <svg class="linha-svg" id="linhaSvg">
-            <line id="linha" x1="0" y1="0" x2="0" y2="0" />
-        </svg>
-        <!-- CAIXA DE DESCRIÇÃO -->
-        <div id="descricao" class="descricao"></div>
-    </div>
-
-    <!-- Display inferior -->
-    <div class="display" id="display">
-        Nenhum botão pressionado
-    </div>
-
-</main>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
